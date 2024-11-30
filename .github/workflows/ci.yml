@@ -1,0 +1,22 @@
+name: CI
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - 'ubuntu-latest'
+          - 'macOS-13'
+          - 'macOS-14'
+          - 'macOS-15'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: The script
+        run: ./ci-script.sh
+        shell: bash
