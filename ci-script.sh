@@ -4,7 +4,9 @@ set -euo pipefail
 set -x
 clang --version
 ls -lah "$(which clang)"
-/Applications/Xcode_15.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc --version
+for f in /Applications/Xcode_*.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc; do
+  "$f" --version
+done
 
 if false; then
   clang -Wall -O2 -march=native test.c -o test
