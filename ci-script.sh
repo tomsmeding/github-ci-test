@@ -12,5 +12,5 @@ git clone https://github.com/wolfpld/tracy
 cd tracy
 git checkout v0.11.1
 mkdir build
-cmake -B build -S capture -DCMAKE_BUILD_TYPE=Release -DLEGACY=1
+cmake -B build -S capture -DCMAKE_BUILD_TYPE=Release -DLEGACY=ON -DUSE_WAYLAND=OFF
 cmake --build build --config Release -j 2 -- VERBOSE=1
